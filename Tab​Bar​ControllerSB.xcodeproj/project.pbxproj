@@ -14,6 +14,7 @@
 		5F70066F1E8F1CA6006F75B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70066D1E8F1CA6006F75B5 /* LaunchScreen.storyboard */; };
 		5F70067A1E8F1CA6006F75B5 /* Tab_Bar_ControllerSBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7006791E8F1CA6006F75B5 /* Tab_Bar_ControllerSBTests.swift */; };
 		5F7006851E8F1CA6006F75B5 /* Tab_Bar_ControllerSBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7006841E8F1CA6006F75B5 /* Tab_Bar_ControllerSBUITests.swift */; };
+		5F7006931E8F25A6006F75B5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7006921E8F25A6006F75B5 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		5F7006801E8F1CA6006F75B5 /* Tab​Bar​ControllerSBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tab​Bar​ControllerSBUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7006841E8F1CA6006F75B5 /* Tab_Bar_ControllerSBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab_Bar_ControllerSBUITests.swift; sourceTree = "<group>"; };
 		5F7006861E8F1CA6006F75B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F7006921E8F25A6006F75B5 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				5F70066B1E8F1CA6006F75B5 /* Assets.xcassets */,
 				5F70066D1E8F1CA6006F75B5 /* LaunchScreen.storyboard */,
 				5F7006701E8F1CA6006F75B5 /* Info.plist */,
+				5F7006921E8F25A6006F75B5 /* TabBarController.swift */,
 			);
 			path = "Tab​Bar​ControllerSB";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F7006931E8F25A6006F75B5 /* TabBarController.swift in Sources */,
 				5F7006671E8F1CA6006F75B5 /* ViewController.swift in Sources */,
 				5F7006651E8F1CA6006F75B5 /* AppDelegate.swift in Sources */,
 			);

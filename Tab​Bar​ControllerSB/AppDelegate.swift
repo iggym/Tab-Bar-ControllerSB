@@ -11,14 +11,63 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let arrayOfImages = [ "1", "2", "3", "4", "5", "6", "7", "8","9","10","11","12","13","14","15","`6",]
+    var arrayOfColors = [UIColor]()
+    
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let tabBar = TabBarController()
+        tabBar.viewControllers = self.getArrayOfViewControllers()
+        self.customiseTabItems(tabBar: tabBar.tabBar)
+        // set tabBar as root
+  
+        self.window?.rootViewController = tabBar
+        self.window?.makeKeyAndVisible()
         return true
     }
 
+    
+    func getArrayOfViewControllers() -> [ViewController] {
+        var arrayOfVC  = [ViewController]()
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        populateColorArray()
+        //append viewcontrollers
+        for i in 0..<15 {
+            let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            // customise controllers
+            vc.title = arrayOfImages[i]
+            vc.view.backgroundColor = arrayOfColors[i]
+            
+            arrayOfVC.append(vc)
+        }
+        return arrayOfVC
+    }
+
+    func customiseTabItems(tabBar: UITabBar) {
+        for item in tabBar.items! {
+            item.image = UIImage(named: arrayOfImages[tabBar.items!.index(of: item)!])
+            item.title = arrayOfImages[tabBar.items!.index(of: item)!]
+        }
+    }
+    func populateColorArray(){
+        for _ in 0..<15 {
+            arrayOfColors.append(getRandomColor())
+        }
+    }
+    
+    func getRandomColor() -> UIColor{
+        //Generate between 0 to 1
+        let red:CGFloat = CGFloat(drand48())
+        let green:CGFloat = CGFloat(drand48())
+        let blue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red:red, green: green, blue: blue, alpha: 1.0)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -43,4 +92,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+
 
